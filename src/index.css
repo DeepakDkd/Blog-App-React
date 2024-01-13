@@ -695,7 +695,6 @@ footer {
 		transform: scale(0.7);
 	}
 	.LoginForm{
-		border: 2px solid red;
 		width: 100%;
 		padding: 5px;
 	}
