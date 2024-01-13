@@ -6,7 +6,6 @@ function Home() {
 	const user = useSelector((state)=> state.auth.status)
 	return (
 
-		<div className="homePage">
 			<div class="container">
 			<h1 className='homeTitle'>QuickLink </h1>
 			<section class="animation">
@@ -19,7 +18,6 @@ function Home() {
 				Get Started Now!
 			</button>
 			</Link>
-		</div>
 		</div>
 
 
