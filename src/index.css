@@ -694,6 +694,14 @@ footer {
 	.container{
 		transform: scale(0.7);
 	}
+	.LoginForm{
+		border: 2px solid red;
+		width: 100%;
+		padding: 5px;
+	}
+	.LoginForm h2{
+		font-size: 2rem;
+	}
 }
 @media (max-width:415px) {
 	.container{
@@ -704,6 +712,9 @@ footer {
 	.container{
 		transform: scale(0.4);
 
+	}
+	.LoginForm input{
+		width: 80%;
 	}
 	
 }
