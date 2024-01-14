@@ -626,28 +626,34 @@ footer {
 	}
 
 	.PostUsername {
-		width: 80vw;
+		width: 100%;
 	}
 
 	.Post img {
-		border-radius: 5px;
-		width: 80vw;
+		border-radius: 0;
+		width: 100%;
 		margin: 0;
 	}
 
 	.Post h1 {
-		width: 80vw;
-		border-radius: 5px;
+		width: 100%;
+		border-radius: 0;
+		font-size: 1.5rem;
 	}
 
 	.Post .content {
-		border-radius: 5px;
-		width: 80vw;
+		border-radius: 0;
+		width: 100%;
 		font-size: 1rem;
+		padding: 5px;
+		text-align: start;
 	}
 
 	.PostBtn {
-		right: 10%;
+		right: 0;
+		top: 60px;
+		background-color: transparent;
+		gap: 5px;
 
 	}
 
