@@ -64,11 +64,11 @@ function Login() {
             </form>
 
             <div className="SignUpLink">
-                <p>Don&apos;t have any account?&nbsp;
                     <Link to='/signup'>
+                <p>Don&apos;t have any account?&nbsp;
                         Sign Up!
-                    </Link>
                 </p>
+                    </Link>
             </div>
 
         </div>

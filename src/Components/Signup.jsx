@@ -66,11 +66,11 @@ function Signup() {
                 />
                 <button className='SignUpBtn' type='submit' >Submit</button>
             </form>
-            <h3> Already have an account?&nbsp;
                 <Link to={'/login'}>
-                    Login
-                </Link>
+            <h3> Already have an account?&nbsp;
+                    Login!
             </h3>
+                </Link>
 
         </div>
     )
