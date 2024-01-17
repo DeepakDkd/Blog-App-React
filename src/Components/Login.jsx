@@ -14,7 +14,6 @@ function Login() {
     const { register, handleSubmit } = useForm()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
-    const user = useSelector((state)=> state.auth.userData)
 
     const login = async (data) => {
         setError('')
@@ -29,6 +28,7 @@ function Login() {
             }
         } catch (error) {
             setError(error.message)
+            setLoading(false)
 
         }
     }
