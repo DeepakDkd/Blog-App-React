@@ -13,18 +13,19 @@ function Login() {
     const Dispatch = useDispatch()
     const { register, handleSubmit } = useForm()
     const [error, setError] = useState('')
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     const login = async (data) => {
         setError('')
         try {
             const session = await authService.login(data)
+            setLoading(true)
             if (session) {
                 const userData = await authService.getCurrentUser()
 
-                setLoading(false)
                 if (userData) Dispatch(authLogin({ userData }));
                 navigate('/')
+                setLoading(false)
             }
         } catch (error) {
             setLoading(false)
