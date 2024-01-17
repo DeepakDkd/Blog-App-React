@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useDispatch , useSelector} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { login as authLogin } from '../Store/authSlice'
 import { useForm } from 'react-hook-form'
 import { Input } from './index'
 import authService from '../appwrite/auth'
-import {Loader} from './'
+import { Loader } from './'
 
 function Login() {
 
@@ -18,22 +18,22 @@ function Login() {
     const login = async (data) => {
         setError('')
         try {
-            setLoading(false)
             const session = await authService.login(data)
             if (session) {
                 const userData = await authService.getCurrentUser()
 
-                if (userData) Dispatch(authLogin({userData}));
+                setLoading(false)
+                if (userData) Dispatch(authLogin({ userData }));
                 navigate('/')
             }
         } catch (error) {
-            setError(error.message)
             setLoading(false)
+            setError(error.message)
 
         }
     }
 
-    return !loading ? (<Loader/>) : (
+    return loading ? (<Loader />) : (
 
         <div className="LoginForm">
 
@@ -64,11 +64,11 @@ function Login() {
             </form>
 
             <div className="SignUpLink">
-                    <Link to='/signup'>
-                <p>Don&apos;t have any account?&nbsp;
+                <Link to='/signup'>
+                    <p>Don&apos;t have any account?&nbsp;
                         Sign Up!
-                </p>
-                    </Link>
+                    </p>
+                </Link>
             </div>
 
         </div>
