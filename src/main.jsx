@@ -1,81 +1,81 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
-import './index.css';
-import { Provider } from 'react-redux';
-import store from './Store/Store.js';
-import AuthLayout from './Components/AuthLayout.jsx';
-import Post from './Pages/Post.jsx';
-import AddPost from './Pages/AddPost.jsx';
-import AllPost from './Pages/AllPost.jsx';
-import EditPost from './Pages/EditPost.jsx';
-import Home from './Pages/Home.jsx';
-import Login from './Pages/Login.jsx';
-import Signup from './Pages/Signup.jsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { Provider } from "react-redux";
+import store from "./Store/Store.js";
+import AuthLayout from "./Components/AuthLayout.jsx";
+import Post from "./Pages/Post.jsx";
+import AddPost from "./Pages/AddPost.jsx";
+import AllPost from "./Pages/AllPost.jsx";
+import EditPost from "./Pages/EditPost.jsx";
+import Home from "./Pages/Home.jsx";
+import Login from "./Pages/Login.jsx";
+import Signup from "./Pages/Signup.jsx";
 
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     children: [
       {
-        path: '/',
-        element: <Home />
+        path: "/",
+        element: <Home />,
       },
       {
-        path: '/login',
+        path: "/login",
         element: (
           <AuthLayout authentication={false}>
-            <Login/>
+            <Login />
           </AuthLayout>
-        )
+        ),
       },
       {
-        path: '/signup',
+        path: "/signup",
         element: (
           <AuthLayout authentication={false}>
-            <Signup/>
+            <Signup />
           </AuthLayout>
-        )
+        ),
       },
       {
-        path: '/addpost',
+        path: "/addpost",
         element: (
           <AuthLayout authentication>
             <AddPost />
           </AuthLayout>
-        )
+        ),
       },
       {
-        path: '/allpost',
+        path: "/allpost",
         element: (
           <AuthLayout authentication>
-            <AllPost/>
+            <AllPost />
           </AuthLayout>
-        )
+        ),
       },
       {
-        path: '/edit-post/:slug',
+        path: "/edit-post/:slug",
         element: (
           <AuthLayout authentication>
             <EditPost />
           </AuthLayout>
-        )
+        ),
       },
       {
-        path: '/post/:slug',
-        element: <Post/>
+        path: "/post/:slug",
+        element: <Post />,
       },
-    ]
-  }
+    ],
+  },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );
